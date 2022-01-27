@@ -20,6 +20,14 @@ public class HomeController {
 
     @GetMapping("/all")
     public List<Person> getPeople() {
+        Person person = Person.builder()
+                .id(1L)
+                .name("Khayal")
+                .surname("Farziyev")
+                .age(23)
+                .build();
+
+        System.out.println(person);
         return people;
     }
 
