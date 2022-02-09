@@ -2,6 +2,8 @@ package az.coders.grouppersonal.controller;
 
 
 import az.coders.grouppersonal.model.Person;
+import az.coders.grouppersonal.model.dto.PersonDto;
+import az.coders.grouppersonal.service.HomeService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -12,6 +14,12 @@ import java.util.List;
 public class HomeController {
 
     private final List<Person> people = new ArrayList<>();
+
+    private final HomeService service;
+
+    public HomeController(HomeService service) {
+        this.service = service;
+    }
 
     @GetMapping("/health")
     public String health() {
@@ -34,6 +42,11 @@ public class HomeController {
     @PostMapping("/add")
     public void addPerson(@RequestBody Person person) {
         people.add(person);
+    }
+
+    @PostMapping("/add/p")
+    public void addPerson(@RequestBody PersonDto person) {
+        service.addPerson(person);
     }
 
     @PutMapping("/update")
