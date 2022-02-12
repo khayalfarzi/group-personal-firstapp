@@ -2,9 +2,9 @@ package az.coders.grouppersonal.service;
 
 import az.coders.grouppersonal.model.Human;
 import az.coders.grouppersonal.repository.HumanRepository;
-import az.coders.grouppersonal.repository.HumanRepositoryImpl;
 import az.coders.grouppersonal.util.Loader;
 import com.google.gson.Gson;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -17,7 +17,12 @@ import java.util.Scanner;
 public class HumanServiceImpl implements HumanService {
 
     private final Gson gson = new Gson();
-    private final HumanRepository repository = new HumanRepositoryImpl();
+
+    private final HumanRepository repository;
+
+    public HumanServiceImpl(HumanRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
     public void add(Human human) {
