@@ -6,6 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -34,6 +35,21 @@ public class PersonEntity {
 
     @Enumerated(value = EnumType.STRING)
     private Gender gender;
+
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    @JoinTable(name = "person_products",
+            schema = "public",
+            joinColumns = @JoinColumn(name = "person_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id"))
+    private List<ProductEntity> products;
+
+    @OneToOne(cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER,
+            targetEntity = FlightEntity.class)
+    @JoinColumn(name = "flight_id",
+            referencedColumnName = "id")
+    private FlightEntity flight;
 
     @CreationTimestamp
     @Column(name = "created_at")

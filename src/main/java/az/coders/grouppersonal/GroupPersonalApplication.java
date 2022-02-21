@@ -25,7 +25,7 @@ public class GroupPersonalApplication {
         SpringApplication.run(GroupPersonalApplication.class, args);
     }
 
-    @PostConstruct
+//    @PostConstruct
     public void loadData() {
 
 //        List<Human> humans = Generator.generateHumans();
