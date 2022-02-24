@@ -14,7 +14,6 @@ import java.util.List;
 public class HomeController {
 
     private final List<Person> people = new ArrayList<>();
-
     private final HomeService service;
 
     public HomeController(HomeService service) {
