@@ -11,20 +11,8 @@ import javax.annotation.PostConstruct;
 @SpringBootApplication
 public class GroupPersonalApplication {
 
-    private final AzTownsClient client;
-
-    public GroupPersonalApplication(AzTownsClient client) {
-        this.client = client;
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(GroupPersonalApplication.class, args);
     }
 
-    @PostConstruct
-    public void loadData() {
-        System.out.println(
-                client.getTowns()
-        );
-    }
 }
