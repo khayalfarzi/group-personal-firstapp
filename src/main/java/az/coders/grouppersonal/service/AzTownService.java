@@ -3,6 +3,7 @@ package az.coders.grouppersonal.service;
 import az.coders.grouppersonal.client.AzTownsClient;
 import az.coders.grouppersonal.model.AzTown;
 import az.coders.grouppersonal.model.Response;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service

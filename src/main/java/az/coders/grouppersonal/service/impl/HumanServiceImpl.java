@@ -1,7 +1,8 @@
-package az.coders.grouppersonal.service;
+package az.coders.grouppersonal.service.impl;
 
 import az.coders.grouppersonal.model.Human;
 import az.coders.grouppersonal.repository.HumanRepository;
+import az.coders.grouppersonal.service.HumanService;
 import az.coders.grouppersonal.util.Loader;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
