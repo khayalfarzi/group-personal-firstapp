@@ -1,7 +1,5 @@
 package az.coders.grouppersonal.model;
 
-import az.coders.grouppersonal.dao.entity.ERole;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

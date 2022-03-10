@@ -82,7 +82,6 @@ public class AuthServiceImpl implements AuthService {
             return new MessageResponse("Error: Username is already taken!");
         }
 
-
         if (userRepository.existsByEmail(signUpRequest.getEmail()))
             return new MessageResponse("Error: Email is already in use!");
 
